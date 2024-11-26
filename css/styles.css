@@ -1,0 +1,12 @@
+* {
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+#main-title {
+	font-size: 2.5em;
+}
