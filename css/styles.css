@@ -10,3 +10,8 @@ body {
 #main-title {
 	font-size: 2.5em;
 }
+
+
+#characterTable {
+	display: none;
+}
