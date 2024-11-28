@@ -6,7 +6,7 @@ const CHARACTER_TABLE_ID = 'characterTable';
 const TABLE_TITLE_ID = 'tableTitle';
 
 document.addEventListener('DOMContentLoaded', () => {
-	const form = document.getElementById('form');
+	const form = document.getElementById(FORM_ID);
 	form.addEventListener('submit', handleFormSubmit);
 });
 
@@ -15,6 +15,7 @@ function handleFormSubmit(event) {
 	const urlInput = document.getElementById(URL_INPUT_ID).value;
 
 	if (!isValidUrl(urlInput)) {
+	document.getElementById("container-table").style.display = 'none';
 		showNotification('Ingresar "characters"');
 		return;
 	}
@@ -48,10 +49,9 @@ async function fetchData(apiUrl) {
 }
 
 function displayData(data) {
+	document.getElementById("container-table").style.display = 'block';
 	document.getElementById(TABLE_TITLE_ID).innerText = 'Personajes';
-	const characterTable = document.getElementById(CHARACTER_TABLE_ID);
-	const tableBody = characterTable.querySelector('tbody');
-	characterTable.style.display = 'block';
+	const tableBody = document.querySelector('tbody');
 	tableBody.innerHTML = ''; // Limpiar tabla antes de agregar nuevos datos
 
 	data.forEach((character) => {
