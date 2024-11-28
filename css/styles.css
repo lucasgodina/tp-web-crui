@@ -5,9 +5,20 @@
 
 body {
 	overflow-x: hidden;
-
-	
 }
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+main {
+	flex: 1;
+}
+
 header {
 	background-color: #0f0f0f;
 	height: 100px;
@@ -18,7 +29,7 @@ header {
 	z-index: 100;
 }
 
-header h2{
+header h2 {
 	color: white;
 	font-size: 2em;
 	margin: 0;
@@ -28,10 +39,11 @@ header h2{
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
 header img {
 	height: 100%;
-
 }
+
 #notification {
 	/* position: absolute; */
 	display: none;
@@ -40,14 +52,10 @@ header img {
 	transform: translate(-50%, -50%);
 	color: rgb(13, 185, 79);
 	font-size: 1.5em;
-	
-	
 }
 
-main{
+main {
 	margin-top: 100px;
-
-
 }
 
 h1 {
@@ -58,7 +66,11 @@ h1 {
 	text-align: center;
 }
 
-p{
+h3 {
+	text-align: center;
+}
+
+p {
 	color: rgb(83, 76, 76);
 	font-size: 1.5em;
 	margin: 0;
@@ -66,7 +78,7 @@ p{
 	text-align: center;
 }
 
-#form{
+#form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -76,11 +88,10 @@ p{
 	color: aliceblue;
 }
 
-
 #form button {
 	width: 80%;
 	height: 30px;
-	margin: 10px;	
+	margin: 10px;
 }
 
 #form input {
@@ -111,17 +122,19 @@ p{
 #container-table {
 	display: none;
 }
+
 #characterTable {
 	margin: 0 auto;
 	width: 80%;
 	margin-top: 40px;
 }
 
-thead{
+thead {
 	background-color: #866d4e;
 	color: white;
 }
-#characterTable th, #characterTable td {
+#characterTable th,
+#characterTable td {
 	padding: 10px;
 	border: 1px solid #ddd;
 }
@@ -129,9 +142,9 @@ thead{
 #characterTable img {
 	width: 200px;
 	height: 250px;
-    
 }
-footer{
+
+footer {
 	background-color: #0f0f0f;
 	height: 100px;
 	width: 100%;
@@ -142,10 +155,12 @@ footer{
 	text-align: center;
 	padding-top: 20px;
 }
-footer img{
+
+footer img {
 	height: 50px;
 }
-footer p{
+
+footer p {
 	margin: 0;
 	padding: 0;
 	font-size: 1em;
@@ -198,7 +213,7 @@ footer p{
 		display: none;
 	}
 	header img {
-	    text-align: center;
+		text-align: center;
 	}
 
 	main {
@@ -231,6 +246,4 @@ footer p{
 	.footer-text {
 		font-size: 0.8em;
 	}
-	    
 }
-	
