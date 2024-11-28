@@ -3,7 +3,6 @@ const FORM_ID = 'form';
 const URL_INPUT_ID = 'urlInput';
 const NOTIFICATION_ID = 'notification';
 const CHARACTER_TABLE_ID = 'characterTable';
-const TABLE_TITLE_ID = 'tableTitle';
 
 document.addEventListener('DOMContentLoaded', () => {
 	const form = document.getElementById(FORM_ID);
@@ -50,7 +49,6 @@ async function fetchData(apiUrl) {
 
 function displayData(data) {
 	document.getElementById("container-table").style.display = 'block';
-	document.getElementById(TABLE_TITLE_ID).innerText = 'Personajes';
 	const tableBody = document.querySelector('tbody');
 	tableBody.innerHTML = ''; // Limpiar tabla antes de agregar nuevos datos
 
@@ -64,5 +62,3 @@ function displayData(data) {
 		newRow.insertCell().textContent = character.birthdate;
 	});
 }
-
-// Funciones Imprimir || Descargar
