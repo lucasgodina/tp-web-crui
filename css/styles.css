@@ -73,9 +73,16 @@ p {
 	text-align: center;
 }
 
+.description{
+    margin-top: 15px;
+	text-align: justify;
+	margin-left: 30%;
+	margin-right: 30%;
+}
+
 #form {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	margin-top: 20px;
@@ -83,14 +90,8 @@ p {
 	color: aliceblue;
 }
 
-#form button {
-	width: 80%;
-	height: 30px;
-	margin: 10px;
-}
-
 #form input {
-	width: 80%;
+	width: 20%;
 	height: 30px;
 	margin: 10px;
 	border-radius: 5px;
@@ -99,7 +100,7 @@ p {
 }
 
 #form button {
-	width: 80%;
+	width: 5.5%;
 	height: 30px;
 	margin: 10px;
 	border-radius: 5px;
@@ -111,7 +112,6 @@ p {
 
 #form button:hover {
 	background-color: #683514;
-	color: white;
 }
 
 #container-table {
@@ -258,5 +258,4 @@ footer p {
 
 #printButton:hover {
 	background-color: #683514;
-	color: white;
 }

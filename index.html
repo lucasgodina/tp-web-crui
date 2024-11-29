@@ -1,69 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Trabajo Práctico - Diseño Web</title>
-		<link rel="stylesheet" href="/css/styles.css" />
-	</head>
-	<body>
-		<header>
-			<img
-				src="/img/harrypotterlogo.png"
-				alt="Logo Harry Potter"
-				id="logo"
-			/>
-		</header>
-		<main>
-			<h1 id="main-title">PotterAPI</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trabajo Práctico - Diseño Web</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <img src="/img/harrypotterlogo.png" alt="Logo Harry Potter" id="logo" />
+    </header>
+    <main>
+      <h1 id="main-title">PotterAPI</h1>
 
-			<h3>Placeholder</h3>
-			<!-- Placeholder -->
+      <h3>Envuélvete en un mundo mágico</h3>
+      <!-- Placeholder -->
 
-			<p>
-				Bienvenidos a la página de PotterAPI. En esta página podrás
-				encontrar todos los personajes de Harry Potter. Para ello, solo
-				deberás ingresar la URL de la API en el campo de texto y
-				presionar el botón "Enviar". Una vez hecho esto, se mostrará una
-				tabla con todos los personajes de Harry Potter.
-			</p>
+      <p class="description">
+        ¡Bienvenido a PotterAPI! En esta página podrás encontrar más de 20
+        personajes de la serie de novelas fantásticas "Harry Potter", la cual
+        fue introducida al mundo con su primer libro "Harry Potter y la piedra
+        filosofal" en el año 1997. Para ello, solo deberás ingresar la palabra
+        "characters" en el campo de texto y presionar el botón "Enviar". Una vez
+        hecho esto, se mostrará una tabla con personajes de esta mágica saga.
+      </p>
 
-			<form id="form">
-				<label>https://potterapi-fedeperin.vercel.app/es/</label>
-				<input type="text" id="urlInput" required />
-				<button type="submit">Enviar</button>
-			</form>
-			<div id="notification"></div>
-			<div id="container-table">
-				<h2 id="tableTitle">Personajes</h2>
-				<button onclick="window.print()" id="printButton">
-					Imprimir
-				</button>
-				<table id="characterTable">
-					<thead>
-						<tr>
-							<th>Nombre Completo</th>
-							<th>Nickname</th>
-							<th>Casa</th>
-							<th>Actor</th>
-							<th>Foto</th>
-							<th>Fecha de nacimiento</th>
-						</tr>
-					</thead>
-					<tbody></tbody>
-				</table>
-			</div>
-		</main>
-		<footer>
-			<img
-				src="/img/harrypotterlogo.png"
-				alt="Logo Harry Potter"
-				id="logo"
-			/>
-			<p class="footer-text">
-				"La magia de los datos está en cómo los usamos."
-			</p>
-		</footer>
-		<script src="js/main.js"></script>
-	</body>
+      <form id="form">
+        <label>https://potterapi-fedeperin.vercel.app/es/</label>
+        <input type="text" id="urlInput" required />
+        <button type="submit">Enviar</button>
+      </form>
+      <div id="notification"></div>
+      <div id="container-table">
+        <h2 id="tableTitle">Personajes</h2>
+        <button onclick="window.print()" id="printButton">Imprimir</button>
+        <table id="characterTable">
+          <thead>
+            <tr>
+              <th>Nombre Completo</th>
+              <th>Nickname</th>
+              <th>Casa</th>
+              <th>Actor</th>
+              <th>Foto</th>
+              <th>Fecha de nacimiento</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </main>
+    <footer>
+      <img src="/img/harrypotterlogo.png" alt="Logo Harry Potter" id="logo" />
+      <p class="footer-text">
+        "La magia de los datos está en cómo los usamos."
+      </p>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
 </html>
