@@ -17,4 +17,8 @@ Le damos estructura a la página web a través del index.html. Hacemos uso de lo
 
 ## Paso 3: Estilo de la página web
 
+styles.css
+
 ## Paso 4: Funciones de la página web y uso de la API
+
+main.js

@@ -1,60 +1,71 @@
-const api = 'https://potterapi-fedeperin.vercel.app/es/';
+const API_BASE_URL = 'https://potterapi-fedeperin.vercel.app/es/';
+const FORM_ID = 'form';
+const URL_INPUT_ID = 'urlInput';
+const NOTIFICATION_ID = 'notification';
+const CHARACTER_TABLE_ID = 'characterTable';
 
 document.addEventListener('DOMContentLoaded', () => {
-	const form = document.getElementById('form');
-	form.addEventListener('submit', (e) => {
-		e.preventDefault();
-		const urlInput = document.getElementById('urlInput').value;
-		// Validar formulario
-		if (!formValidate(urlInput)) {
-			// Si se ingrese un valor inválido, interrumpir el flujo
-			return;
-		}
-
-		// Obtener datos de la API
-		const apiUrl = api + urlInput;
-		fetchData(apiUrl);
-	});
+	const form = document.getElementById(FORM_ID);
+	form.addEventListener('submit', handleFormSubmit);
 });
 
-function formValidate(url) {
-	if (url !== 'characters') {
-		document.getElementById('notification').innerHTML = "Ingresar 'characters'";
-		return false;
+function handleFormSubmit(event) {
+	event.preventDefault();
+	const urlInput = document.getElementById(URL_INPUT_ID).value;
+
+	if (!isValidUrl(urlInput)) {
+		document.getElementById('container-table').style.display = 'none';
+		showNotification('Ingresar "characters"', 'error');
+		return;
 	}
-	return true;
+
+	const apiUrl = `${API_BASE_URL}${urlInput}`;
+	fetchData(apiUrl);
+}
+
+function isValidUrl(url) {
+	return url === 'characters';
+}
+
+function showNotification(message, notificationType = 'success') {
+	const notification = document.getElementById(NOTIFICATION_ID);
+	notification.innerHTML = message;
+	notification.style.display = 'flex';
+	if (notificationType === 'success') {
+		notification.style.color = 'green';
+	} else {
+		notification.style.color = 'red';
+	}
 }
 
 async function fetchData(apiUrl) {
 	try {
 		const response = await fetch(apiUrl);
+		if (!response.ok) {
+			throw new Error(
+				`Error en la solicitud. Código de estado: ${response.status}`
+			);
+		}
 		const data = await response.json();
-		// console.log(response);
-		// console.log(data);
-
-		document.getElementById('notification').innerHTML = '¡Solicitud exitosa!';
-
-		// Mostrar resultados en la tabla HTML
-		showData(data);
-	} catch (e) {
-		document.getElementById('notification').innerHTML = 'Error: ' + e.message;
+		showNotification('¡Solicitud exitosa!');
+		displayData(data);
+	} catch (error) {
+		showNotification(`Error: ${error.message}`);
 	}
 }
 
-function showData(data) {
-	document.getElementById('tableTitle').innerText = 'Personajes';
-	const characterTable = document.getElementById('characterTable');
-	const tableBody = characterTable.querySelector('tbody');
-	characterTable.style.display = 'block';
+function displayData(data) {
+	document.getElementById('container-table').style.display = 'block';
+	const tableBody = document.querySelector('tbody');
+	tableBody.innerHTML = ''; // Limpiar tabla antes de agregar nuevos datos
+
 	data.forEach((character) => {
 		const newRow = tableBody.insertRow();
 		newRow.insertCell().textContent = character.fullName;
 		newRow.insertCell().textContent = character.nickname;
 		newRow.insertCell().textContent = character.hogwartsHouse;
 		newRow.insertCell().textContent = character.interpretedBy;
-		newRow.insertCell().innerHTML = `<img src=${character.image}>`;
+		newRow.insertCell().innerHTML = `<img src=${character.image} alt="${character.fullName}">`;
 		newRow.insertCell().textContent = character.birthdate;
 	});
 }
-
-// Funciones Imprimir || Descargar
