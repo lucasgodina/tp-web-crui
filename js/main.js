@@ -50,7 +50,7 @@ async function fetchData(apiUrl) {
 		showNotification('¡Solicitud exitosa!');
 		displayData(data);
 	} catch (error) {
-		showNotification(`Error: ${error.message}`);
+		showNotification(`Error: ${error.message}`, 'error');
 	}
 }
 
@@ -66,6 +66,7 @@ function displayData(data) {
 		newRow.insertCell().textContent = character.hogwartsHouse;
 		newRow.insertCell().textContent = character.interpretedBy;
 		newRow.insertCell().innerHTML = `<img src=${character.image} alt="${character.fullName}">`;
+		// newRow.insertCell().innerHTML = '<img src=' + character.image + ' alt=' + character.fullName + '>';
 		newRow.insertCell().textContent = character.birthdate;
 	});
 }

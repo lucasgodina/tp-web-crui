@@ -1,6 +1,6 @@
 # Creación del proyecto
 
-En este documento se detallará un paso a paso de cómo fue creado el proyecto.
+En este documento se detallará un paso a paso cómo fue creado el proyecto.
 También nos sirve de guía para despejar dudas a la hora de preparar la defensa del trabajo.
 
 ## Paso 1: Creación del repositorio
@@ -13,8 +13,7 @@ Creamos un nuevo repositorio en GitHub, clonamos en nuestra computadora y luego 
 
 ## Paso 2: Estructura de la página web
 
-Definimos la estructura básica de la página web en el archivo index.html. Utilizamos HTML para crear los elementos necesarios y organizarlos de manera lógica.
-
+Definimos la estructura básica de la página web en el archivo index.html. Utilizamos HTML para crear los elementos necesarios y organizarlos estucturadamente.
 
 ## Paso 3: Estilo de la página web
 
