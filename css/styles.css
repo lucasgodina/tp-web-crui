@@ -73,8 +73,8 @@ p {
 	text-align: center;
 }
 
-.description{
-    margin-top: 15px;
+.description {
+	margin-top: 15px;
 	text-align: justify;
 	margin-left: 30%;
 	margin-right: 30%;
@@ -162,6 +162,22 @@ footer p {
 	font-size: 1em;
 }
 
+#printButton {
+	display: block;
+	margin: 20px auto;
+	padding: 10px 20px;
+	background-color: #a67030;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	text-align: center;
+}
+
+#printButton:hover {
+	background-color: #683514;
+}
+
 /* Responsive */
 @media screen and (max-width: 768px) {
 	header {
@@ -242,20 +258,4 @@ footer p {
 	.footer-text {
 		font-size: 0.8em;
 	}
-}
-
-#printButton {
-	display: block;
-	margin: 20px auto;
-	padding: 10px 20px;
-	background-color: #a67030;
-	color: white;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	text-align: center;
-}
-
-#printButton:hover {
-	background-color: #683514;
 }
