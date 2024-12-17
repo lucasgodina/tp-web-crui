@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function handleFormSubmit(event) {
-	event.preventDefault();
-	const urlInput = document.getElementById(URL_INPUT_ID).value;
+	event.preventDefault(); // Evita que el formulario se envíe por defecto
+	const urlInput = document.getElementById(URL_INPUT_ID).value; // Obtiene el valor del input
 
 	if (!isValidUrl(urlInput)) {
 		document.getElementById('container-table').style.display = 'none';
@@ -29,8 +29,8 @@ function isValidUrl(url) {
 
 function showNotification(message, notificationType = 'success') {
 	const notification = document.getElementById(NOTIFICATION_ID);
-	notification.innerHTML = message;
-	notification.style.display = 'flex';
+	notification.innerHTML = message; // Agrega el mensaje al elemento notification
+	notification.style.display = 'flex'; // Muestra el elemento notification
 	if (notificationType === 'success') {
 		notification.style.color = 'green';
 	} else {
@@ -46,21 +46,21 @@ async function fetchData(apiUrl) {
 				`Error en la solicitud. Código de estado: ${response.status}`
 			);
 		}
-		const data = await response.json();
+		const data = await response.json(); // Convierte la respuesta en un objeto JSON
 		showNotification('¡Solicitud exitosa!');
-		displayData(data);
+		displayData(data); // Muestra los datos en la tabla
 	} catch (error) {
 		showNotification(`Error: ${error.message}`, 'error');
 	}
 }
 
 function displayData(data) {
-	document.getElementById('container-table').style.display = 'block';
+	document.getElementById('container-table').style.display = 'block'; // Muestra la tabla oculta por defecto
 	const tableBody = document.querySelector('tbody');
 	tableBody.innerHTML = ''; // Limpiar tabla antes de agregar nuevos datos
 
 	data.forEach((character) => {
-		const newRow = tableBody.insertRow();
+		const newRow = tableBody.insertRow(); //agrega una fila a la tabla
 		newRow.insertCell().textContent = character.fullName;
 		newRow.insertCell().textContent = character.nickname;
 		newRow.insertCell().textContent = character.hogwartsHouse;
